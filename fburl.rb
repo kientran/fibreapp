@@ -1,10 +1,11 @@
 require 'sinatra'
-require 'ri_cal'
+require 'icalendar'
 require 'date'
 require 'open-uri'
+require 'haml'
 
 get '/' do
-  'hello world!'
+  haml :index
 end
 
 get '/webcal://www.facebook.com/ical/b.php' do
@@ -13,10 +14,10 @@ get '/webcal://www.facebook.com/ical/b.php' do
   
   "UID #{uid}  KEY #{key}"
   
-  calendars = RiCal.parse(open("http://www.facebook.com/ical/b.php?uid=#{uid}&key=#{key}"))
+  calendars = Icalendar.parse(open("http://www.facebook.com/ical/b.php?uid=#{uid}&key=#{key}"))
 
   calendars.first.events.each do |event|
     event.dtstart = Date.parse(event.dtstart.to_s) << 12
   end
-  calendars.first.export
+  calendars.first.to_ical
 end
