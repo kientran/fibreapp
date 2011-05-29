@@ -1,2 +1,2 @@
-require 'fburl'
+require 'fibreapp'
 run Sinatra::Application
