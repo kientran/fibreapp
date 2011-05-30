@@ -99,7 +99,9 @@ header, footer {
 	text-align: center;
 	padding: 0 0 1em 0;
 }
-h1, h2, h3, #main_instructions { font-family: 'Architects Daughter', arial, serif; }
+h1, h2, h3, #main_instructions { 
+	font-family: 'Architects Daughter', arial, serif;
+}
 
 h1 {
 	font-size: 2em;
@@ -122,7 +124,15 @@ p {
 
 #urlform {
 	text-align: center;
-	padding: 0 0 1em 0;
+	padding: 10px;
+    margin-bottom: 1em;
+    border: 1px solid black;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
 }
 #main_instructions {
 	font-size: 1.5em;
