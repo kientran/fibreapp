@@ -20,9 +20,11 @@ You can use this on any calendar application that accepts an iCal subscription a
 
 ## HOW do you use it
 
-SCREEN CAST 
-
+<!--SCREEN CAST -->
+	
 Simply go to your <a href='http://www.facebook.com/?sk=bd' target='_new'>Facebook Birthday list</a>.
+	
+![Facebook](/img/facebook.png)
 
 Scroll to the bottom of the page and click "Export Birthdays."  This will popup a box with a webcal link.
 
@@ -34,11 +36,16 @@ Copy the resultant link
 
 Subscribe to the link in your favorite Calendar Application.
 
-SCREENSHOT GOOGLE
+<!--SCREENSHOT GOOGLE-->
+### Google
+![Google](/img/google.png)
 
-SCREENSHOT  iCAL
+<!--SCREENSHOT  iCAL-->
+### iCal
+![Ical](/img/ical.png)
+<!--SCREENSHOT OUTLOOK-->
 
-SCREENSHOT OUTLOOK
+<a href='#' class='top'>Back to Top</a>
 
 ## WHY did I write this
 I rely on Facebook to help remind me about my friend's birthdays. I also am completely dependent on my Google Calendar to plan my life, and as such, I want to have this birthday information in my calendar.
@@ -53,6 +60,8 @@ I solve this issue by subtracting one year from the events that Facebook creates
 
 Since Facebook has ignored my bug reports and has a track record that makes it very unlikely that they will fix the issue any time soon, I have taken it upon myself to correct the issue.
 
+<a href='#' class='top'>Back to Top</a>
+
 ## HOW does this work?
 The app fetches your Facebook Birthday iCal export file using your userid and feed key.  
 
@@ -60,8 +69,12 @@ From there, it modifies all the event dates to remove the Time component, turnin
 
 Then it returns the modified iCal feed back for use in any application that supports it
 
+<a href='#' class='top'>Back to Top</a>
+
 ## WHO am I
 I am Kien Tran, a web designer, application developer, and Audio/Video technician from Dallas, Texas.
+
+<a href='#' class='top'>Back to Top</a>
 
 ## FAQ:
 ### Are you storing my Facebook UID and key?
@@ -79,6 +92,8 @@ Indeed.
 ### Can I pull other people's friend's birthday feeds?
 In theory yes, but you'd need their UID and their access key.
 
+<a href='#' class='top'>Back to Top</a>
+
 ## Comments and Concerns
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -93,3 +108,12 @@ dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<a href='#' class='top'>Back to Top</a>
+
+<script>
+var _gaq=[['_setAccount','UA-23678097-1'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>

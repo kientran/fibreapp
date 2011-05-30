@@ -134,6 +134,13 @@ p {
 	-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
 	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
 }
+
+#main img {
+    border: 1px solid black;
+	-moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
 #main_instructions {
 	font-size: 1.5em;
 	font-weight: bold;
