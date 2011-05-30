@@ -50,7 +50,6 @@ post '/form' do
 end
 
 get '/b/:uid/:key', :agent => @desktopAgents do
-  pass #Google calendar seems to report as webkit?
   calendar = get_iCal(params[:uid], params[:key])
   @feedurl = "http://#{request.host}/b/#{params[:uid]}/#{params[:key]}"
   erb :copy
