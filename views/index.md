@@ -1,7 +1,8 @@
 
-## COPY your Facebook Birthday Export feed here.
-
 <div id='urlform'>
+<div id='main_instructions'>
+COPY your Facebook Birthday Exported iCal feed here
+</div>
 <form action='/form' method='post'>
 <input type='text' id='url' name='url' /><br />
 <input type='submit' value='Convert'>	
@@ -72,3 +73,8 @@ Feel free to fork and do a merge request.
 ### How do I make this work with Outook 2011 for Mac?
 Outlook 2011 for Mac does not have the ability to directly subscribe to iCal feeds. You must use Apple iCal to subscribe and then sync Outlook 2011 to iCal with SyncServices.
 
+### I looked though your code, and I saw that there were a few other ways to make the url work.
+Indeed.
+
+### Can I pull other people's friend's birthday feeds?
+In theory yes, but you'd need their UID and their access key.

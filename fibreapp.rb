@@ -6,7 +6,6 @@ require 'icalendar'
 require 'date'
 require 'open-uri'
 
-
 configure do
   set :markdown, :layout_engine => :erb
 end

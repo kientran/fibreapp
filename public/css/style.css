@@ -99,7 +99,7 @@ header, footer {
 	text-align: center;
 	padding: 0 0 1em 0;
 }
-h1, h2, h3 { font-family: 'Architects Daughter', arial, serif; }
+h1, h2, h3, #main_instructions { font-family: 'Architects Daughter', arial, serif; }
 
 h1 {
 	font-size: 2em;
@@ -119,9 +119,14 @@ p {
 	line-height: 1.5em;
 }
 
+
 #urlform {
 	text-align: center;
 	padding: 0 0 1em 0;
+}
+#main_instructions {
+	font-size: 1.5em;
+	font-weight: bold;
 }
 #url {
 	width: 800px;
