@@ -79,6 +79,7 @@ Indeed.
 ### Can I pull other people's friend's birthday feeds?
 In theory yes, but you'd need their UID and their access key.
 
+## Comments and Concerns
 <div id="disqus_thread"></div>
 <script type="text/javascript">
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

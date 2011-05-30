@@ -51,7 +51,7 @@ end
 
 get '/b/:uid/:key', :agent => @desktopAgents do
   calendar = get_iCal(params[:uid], params[:key])
-  @feedurl = "#{request.host}/b/#{params[:uid]}/#{params[:key]}"
+  @feedurl = "http://#{request.host}/b/#{params[:uid]}/#{params[:key]}"
   erb :copy
 end
 
@@ -68,7 +68,7 @@ get '/webcal://www.facebook.com/ical/b.php', :agent => @desktopAgents do
   key = params['key']
 
   calendar = get_iCal(uid, key)
-  @feedurl = "#{request.host}/b/#{uid}/#{key}"
+  @feedurl = "http://#{request.host}/b/#{uid}/#{key}"
   erb :copy
 
 end
