@@ -63,9 +63,21 @@ Since Facebook has ignored my bug reports and has a track record that makes it v
 <a href='#' class='top'>Back to Top</a>
 
 ## HOW does this work?
-The app fetches your Facebook Birthday iCal export file using your userid and feed key.  
+The app fetches your Facebook Birthday iCal export file using your userid and feed key.
+
+    def get_iCal(uid, key)
+      calendars = Icalendar.parse(open("http://www.facebook.com/ical/b.php?uid=#{uid}&key=#{key}"))
+      calendars.first
+    end
 
 From there, it modifies all the event dates to remove the Time component, turning them into "all-day" events. It also rolls all events back one year so you can see recently past birthdays.
+
+	def fix_iCal(calendar)
+	  calendar.events.each do |event|
+	    event.dtstart = Date.parse(event.dtstart.to_s) << 12
+	  end
+	  calendar
+	end
 
 Then it returns the modified iCal feed back for use in any application that supports it
 
