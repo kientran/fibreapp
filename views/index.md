@@ -24,7 +24,7 @@ You can use this on any calendar application that accepts an iCal subscription a
 	
 Simply go to your <a href='http://www.facebook.com/?sk=bd' target='_new'>Facebook Birthday list</a>.
 	
-![Facebook](/img/facebook.png)
+![Facebook](/img/facebook.jpg)
 
 Scroll to the bottom of the page and click "Export Birthdays."  This will popup a box with a webcal link.
 
@@ -38,17 +38,19 @@ Subscribe to the link in your favorite Calendar Application.
 
 <!--SCREENSHOT GOOGLE-->
 ### Google
-![Google](/img/google.png)
+![Google](/img/google.jpg)
 
 <!--SCREENSHOT  iCAL-->
 ### iCal
-![Ical](/img/ical.png)
+![Ical](/img/ical.jpg)
 <!--SCREENSHOT OUTLOOK-->
 
 <a href='#' class='top'>Back to Top</a>
 
 ## WHY did I write this
 I rely on Facebook to help remind me about my friend's birthdays. I also am completely dependent on my Google Calendar to plan my life, and as such, I want to have this birthday information in my calendar.
+
+![Facebook](/img/fibrevsfb.jpg)
 
 With the default Facebook iCal export, there is an issue where the exported events are actualy 24 hour events, starting at midnight. This causes my calendar to fill those days with an event that lasts all day long, causing clutter and pushing aside other appointments I have for the day.
 
