@@ -88,6 +88,8 @@ a:hover { color: #036; }
 
 body {
 	font-size: 12pt;
+    background: #DDD url('/img/background.jpg') repeat;
+	
 }
 
 #container {

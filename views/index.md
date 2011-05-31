@@ -44,6 +44,8 @@ Subscribe to the link in your favorite Calendar Application.
 ### iCal
 ![Ical](/img/ical.jpg)
 <!--SCREENSHOT OUTLOOK-->
+### Outlook
+![Outlook](/img/outlook.jpg)
 
 <a href='#' class='top'>Back to Top</a>
 
@@ -76,6 +78,7 @@ From there, it modifies all the event dates to remove the Time component, turnin
 
 	def fix_iCal(calendar)
 	  calendar.events.each do |event|
+	    # Convert DateTime object to Date object, and shift it 12 months backwards
 	    event.dtstart = Date.parse(event.dtstart.to_s) << 12
 	  end
 	  calendar
