@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Fibreapp by kientran</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Fibreapp</h1>
+        <h2>Facebook iCal Birthday Repair Export</h2>
+        <a href="https://github.com/kientran/fibreapp" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h2>
+<a name="see-it-live-at-httpfibreappcom" class="anchor" href="#see-it-live-at-httpfibreappcom"><span class="octicon octicon-link"></span></a>See it Live at <a href="http://fibreapp.com/">http://fibreapp.com</a>
+</h2>
+
+<h2>
+<a name="what-is-this-app" class="anchor" href="#what-is-this-app"><span class="octicon octicon-link"></span></a>WHAT is this app</h2>
+
+<p>This application takes Facebook's birthday iCal export address and corrects birthdays from 24 hour events to an all day event.</p>
+
+<h2>
+<a name="when-would-you-use-this" class="anchor" href="#when-would-you-use-this"><span class="octicon octicon-link"></span></a>WHEN would you use this</h2>
+
+<p>If you like to keep track of your friend's birthdays, Facebook is a great way to do it. With this app, you can take that listing of birthdays and display it on any iCal compatible calendar.</p>
+
+<h2>
+<a name="where-do-you-use-the-app" class="anchor" href="#where-do-you-use-the-app"><span class="octicon octicon-link"></span></a>WHERE do you use the app</h2>
+
+<p>You can use this on any calendar application that accepts an iCal subscription as a source, such as Apple iCal, Outlook, or Google Calendar.</p>
+
+<h2>
+<a name="how-do-you-use-it" class="anchor" href="#how-do-you-use-it"><span class="octicon octicon-link"></span></a>HOW do you use it</h2>
+
+<p></p>
+
+<p>Simply go to your <a href="http://www.facebook.com/?sk=bd" target="_new">Facebook Birthday list</a>.</p>
+
+<p><img src="http://www.fibreapp.com/img/facebook.jpg" alt="Facebook"></p>
+
+<p>Scroll to the bottom of the page and click "Export Birthdays."  This will popup a box with a webcal link.</p>
+
+<p>Copy this webcal link.</p>
+
+<p>Paste the webcal link into the field above and click convert.</p>
+
+<p>Copy the resultant link</p>
+
+<p>Subscribe to the link in your favorite Calendar Application.</p>
+
+<p></p>
+
+<h3>
+<a name="google" class="anchor" href="#google"><span class="octicon octicon-link"></span></a>Google</h3>
+
+<p><img src="http://www.fibreapp.com/img/google.jpg" alt="Google"></p>
+
+<p></p>
+
+<h3>
+<a name="ical" class="anchor" href="#ical"><span class="octicon octicon-link"></span></a>iCal</h3>
+
+<p><img src="http://www.fibreapp.com/img/ical.jpg" alt="Ical"></p>
+
+<h3>
+<a name="outlook" class="anchor" href="#outlook"><span class="octicon octicon-link"></span></a>Outlook</h3>
+
+<p><img src="http://www.fibreapp.com/img/outlook.jpg" alt="Outlook"></p>
+
+<p><a href="#">Back to Top</a></p>
+
+<h2>
+<a name="why-did-i-write-this" class="anchor" href="#why-did-i-write-this"><span class="octicon octicon-link"></span></a>WHY did I write this</h2>
+
+<p>I rely on Facebook to help remind me about my friend's birthdays. I also am completely dependent on my Google Calendar to plan my life, and as such, I want to have this birthday information in my calendar.</p>
+
+<p><img src="http://www.fibreapp.com/img/fibrevsfb.jpg" alt="Facebook"></p>
+
+<p>With the default Facebook iCal export, there is an issue where the exported events are actualy 24 hour events, starting at midnight. This causes my calendar to fill those days with an event that lasts all day long, causing clutter and pushing aside other appointments I have for the day.</p>
+
+<p>The iCalendar format provides "all-day" events which mean the event does not have a start or end time, but rather appears similar to a "holiday" on your calendar.  This is more appropriate for things such as birthdays and anniversaries.</p>
+
+<p>I also solve the issue where Facebook's feed exports birthdays starting from the current day going forward.  For example, if today is June 1st, 2011, Facebook will list everyone's birthdays starting from June 1st, 2011. Anyone person's birthday prior to June 1st will be considered for next year, May 31, 2012 for example. As such,  your calendar will remove past birthdays as soon as it syncs again.</p>
+
+<p>I solve this issue by subtracting one year from the events that Facebook creates, allow you to view birthdays you've missed up to one year ago.</p>
+
+<p>Since Facebook has ignored my bug reports and has a track record that makes it very unlikely that they will fix the issue any time soon, I have taken it upon myself to correct the issue.</p>
+
+<p><a href="#">Back to Top</a></p>
+
+<h2>
+<a name="how-does-this-work" class="anchor" href="#how-does-this-work"><span class="octicon octicon-link"></span></a>HOW does this work?</h2>
+
+<p>The app fetches your Facebook Birthday iCal export file using your userid and feed key.</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">def</span> <span class="nf">get_iCal</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+  <span class="n">calendars</span> <span class="o">=</span> <span class="no">Icalendar</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">"http://www.facebook.com/ical/b.php?uid=</span><span class="si">#{</span><span class="n">uid</span><span class="si">}</span><span class="s2">&amp;amp;key=</span><span class="si">#{</span><span class="n">key</span><span class="si">}</span><span class="s2">"</span><span class="p">))</span>
+  <span class="n">calendars</span><span class="o">.</span><span class="n">first</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>From there, it modifies all the event dates to remove the Time component, turning them into "all-day" events. It also rolls all events back one year so you can see recently past birthdays.</p>
+
+<div class="highlight highlight-ruby"><pre><span class="k">def</span> <span class="nf">fix_iCal</span><span class="p">(</span><span class="n">calendar</span><span class="p">)</span>
+  <span class="n">calendar</span><span class="o">.</span><span class="n">events</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">event</span><span class="o">|</span>
+    <span class="c1"># Convert DateTime object to Date object, and shift it 12 months backwards</span>
+    <span class="n">event</span><span class="o">.</span><span class="n">dtstart</span> <span class="o">=</span> <span class="no">Date</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">dtstart</span><span class="o">.</span><span class="n">to_s</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">12</span>
+  <span class="k">end</span>
+  <span class="n">calendar</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>Then it returns the modified iCal feed back for use in any application that supports it</p>
+
+<p><a href="#">Back to Top</a></p>
+
+<h2>
+<a name="who-am-i" class="anchor" href="#who-am-i"><span class="octicon octicon-link"></span></a>WHO am I</h2>
+
+<p>I am Kien Tran, a web designer, application developer, and Audio/Video technician from Dallas, Texas.</p>
+
+<p><a href="#">Back to Top</a></p>
+
+<h2>
+<a name="faq" class="anchor" href="#faq"><span class="octicon octicon-link"></span></a>FAQ:</h2>
+
+<h3>
+<a name="are-you-storing-my-facebook-uid-and-key" class="anchor" href="#are-you-storing-my-facebook-uid-and-key"><span class="octicon octicon-link"></span></a>Are you storing my Facebook UID and key?</h3>
+
+<p>No, this application merely acts as a passthrough converter.  Check out the code and run it yourself if you don't believe me.</p>
+
+<h3>
+<a name="your-code-is-terrible-you-should-do-it-like-this" class="anchor" href="#your-code-is-terrible-you-should-do-it-like-this"><span class="octicon octicon-link"></span></a>Your code is terrible, you should do it like this.</h3>
+
+<p>Feel free to fork and do a merge request.</p>
+
+<h3>
+<a name="how-do-i-make-this-work-with-outook-2011-for-mac" class="anchor" href="#how-do-i-make-this-work-with-outook-2011-for-mac"><span class="octicon octicon-link"></span></a>How do I make this work with Outook 2011 for Mac?</h3>
+
+<p>Outlook 2011 for Mac does not have the ability to directly subscribe to iCal feeds. You must use Apple iCal to subscribe and then sync Outlook 2011 to iCal with SyncServices.</p>
+
+<h3>
+<a name="i-looked-though-your-code-and-i-saw-that-there-were-a-few-other-ways-to-make-the-url-work" class="anchor" href="#i-looked-though-your-code-and-i-saw-that-there-were-a-few-other-ways-to-make-the-url-work"><span class="octicon octicon-link"></span></a>I looked though your code, and I saw that there were a few other ways to make the url work.</h3>
+
+<p>Indeed.</p>
+
+<h3>
+<a name="can-i-pull-other-peoples-friends-birthday-feeds" class="anchor" href="#can-i-pull-other-peoples-friends-birthday-feeds"><span class="octicon octicon-link"></span></a>Can I pull other people's friend's birthday feeds?</h3>
+
+<p>In theory yes, but you'd need their UID and their access key.</p>
+
+<p><a href="#">Back to Top</a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/kientran/fibreapp/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/kientran/fibreapp/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/kientran/fibreapp"></a> is maintained by <a href="https://github.com/kientran">kientran</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-23678097-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
